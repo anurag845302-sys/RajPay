@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Join Official Channel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #0b192c; /* Match background color */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .redirect-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            max-width: 500px; /* Desktop par bhi clean dikhne ke liye */
+            object-fit: cover; /* Poori screen fill karega bina text stretch kiye */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Yahan href mein apne channel ka link dalein -->
+    <a href="https://t.me/+mRlfoySRTuQ3NDA1" id="channelLink" class="redirect-link">
+        <!-- Upar banayi gayi image ko download karke 'banner.png' naam se save karein -->
+        <img src="banner.png" alt="High Commission Offer" class="banner-img">
+    </a>
+
+    <script>
+        // Yahan bhi apne channel ka exact link dalein
+        const channelUrl = "https://t.me/+mRlfoySRTuQ3NDA1";
+
+        // 3 seconds (3000 milliseconds) baad automatic redirect
+        const autoRedirect = setTimeout(function() {
+            window.location.replace(channelUrl);
+        }, 3000);
+
+        // Agar user 3 second se pehle click karta hai to timer clear karke turant redirect karein
+        document.getElementById("channelLink").addEventListener("click", function(e) {
+            e.preventDefault();
+            clearTimeout(autoRedirect);
+            window.location.replace(channelUrl);
+        });
+    </script>
+
+</body>
+</html>
